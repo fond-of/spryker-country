@@ -32,7 +32,11 @@ class CountryConsole extends Console
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->getFacade()->importRegions();
+
+        $output->writeln('Regions have been imported');
 
         return static::CODE_SUCCESS;
     }
+
 }
