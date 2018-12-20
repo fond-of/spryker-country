@@ -4,6 +4,7 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://packagist.org/packages/fond-of-spryker/country)
 
 Extends the Spryker Country Extension
+   * Implement Console Command to import regions for the countries
 
 Important: The Module is still in Implementation Phase
 
@@ -11,5 +12,22 @@ Important: The Module is still in Implementation Phase
 
 ```
 composer require fond-of-spryker/country
+```
+
+## 1. Register Console Command in  Pyz\Zed\Console
+
+```
+ new CountryConsole(),
+     
+```
+
+## 2. Add Region Installers in Pyz\Zed\Country\CountryConfig
+
+```
+  return [
+             new GermanyRegionInstaller(),
+             new UnitedStatesRegionInstaller(),
+         ];
+     
 ```
 
