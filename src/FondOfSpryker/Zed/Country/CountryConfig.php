@@ -9,7 +9,7 @@ class CountryConfig extends SprykerCountryConfig
     /**
      * @return \Spryker\Zed\Country\Business\Internal\Regions\RegionInstallInterface[]
      */
-    public function getRegionInstallerCollection()
+    public function getRegionInstallerCollection(): array
     {
         return [];
     }

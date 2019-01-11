@@ -2,18 +2,13 @@
 
 namespace FondOfSpryker\Zed\Country\Business;
 
-use Generated\Shared\Transfer\CountryCollectionTransfer;
 use Generated\Shared\Transfer\CountryTransfer;
 use Generated\Shared\Transfer\RegionTransfer;
-use Orm\Zed\Country\Persistence\SpyCountry;
-use Spryker\Zed\Country\Business\Exception\CountryExistsException;
-use Spryker\Zed\Country\Business\Exception\MissingCountryException;
-use Spryker\Zed\Country\Persistence\CountryQueryContainerInterface;
 use Spryker\Zed\Country\Business\CountryManager as SprykerCountryManager;
+use Spryker\Zed\Country\Business\Exception\MissingCountryException;
 
 class CountryManager extends SprykerCountryManager
 {
-
     /**
      * @param string $iso2code
      *
@@ -32,7 +27,6 @@ class CountryManager extends SprykerCountryManager
 
         $countryTransfer = (new CountryTransfer())->fromArray($countryEntity->toArray(), true);
 
-
         foreach ($countryEntity->getSpyRegions() as $region) {
             $countryTransfer->addRegion((new RegionTransfer())->fromArray($region->toArray(), true));
         }
@@ -40,8 +34,14 @@ class CountryManager extends SprykerCountryManager
         return $countryTransfer;
     }
 
-
-    public function getCountryByIdCountry($idCountry)
+    /**
+     * @param $idCountry
+     *
+     * @throws \Spryker\Zed\Country\Business\Exception\MissingCountryException
+     *
+     * @return \Generated\Shared\Transfer\CountryTransfer
+     */
+    public function getCountryByIdCountry($idCountry): CountryTransfer
     {
         $query = $this->countryQueryContainer->queryCountryByIdCountry($idCountry);
 
@@ -53,12 +53,10 @@ class CountryManager extends SprykerCountryManager
 
         $countryTransfer = (new CountryTransfer())->fromArray($countryEntity->toArray(), true);
 
-
         foreach ($countryEntity->getSpyRegions() as $region) {
             $countryTransfer->addRegion((new RegionTransfer())->fromArray($region->toArray(), true));
         }
 
         return $countryTransfer;
     }
-
 }
