@@ -6,5 +6,4 @@ use Spryker\Zed\Country\CountryDependencyProvider as SprykerCountryDependenyProv
 
 class CountryDependencyProvider extends SprykerCountryDependenyProvider
 {
-
 }

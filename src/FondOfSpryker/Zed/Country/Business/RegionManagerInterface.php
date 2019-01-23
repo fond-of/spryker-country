@@ -2,13 +2,8 @@
 
 namespace FondOfSpryker\Zed\Country\Business;
 
-interface CountryFacadeInterface
+interface RegionManagerInterface
 {
-    /**
-     * @return void
-     */
-    public function importRegions();
-
     /**
      * @param string $iso2code
      *

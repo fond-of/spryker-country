@@ -2,7 +2,6 @@
 
 namespace FondOfSpryker\Zed\Country\Persistence;
 
-use Orm\Zed\Country\Persistence\Map\SpyRegionTableMap;
 use Spryker\Zed\Country\Persistence\CountryQueryContainer as SprykerCountryQueryContainer;
 
 /**
@@ -22,6 +21,11 @@ class CountryQueryContainer extends SprykerCountryQueryContainer
         return $query;
     }
 
+    /**
+     * @param $idCountry
+     *
+     * @return \Orm\Zed\Country\Persistence\SpyCountryQuery
+     */
     public function queryCountryByIdCountry($idCountry)
     {
         $query = $this->queryCountries();

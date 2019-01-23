@@ -5,7 +5,6 @@ namespace FondOfSpryker\Zed\Country\Business\Importer;
 use FondOfSpryker\Zed\Country\CountryConfig;
 use Spryker\Zed\Country\Business\CountryManagerInterface;
 use Spryker\Zed\Country\Business\RegionManagerInterface;
-use Spryker\Zed\Kernel\AbstractBundleConfig;
 
 class Importer implements ImporterInterface
 {
@@ -35,8 +34,7 @@ class Importer implements ImporterInterface
         CountryManagerInterface $countryManager,
         RegionManagerInterface $regionManager,
         CountryConfig $config
-    )
-    {
+    ) {
         $this->countryManager = $countryManager;
         $this->regionManager = $regionManager;
         $this->config = $config;
@@ -51,11 +49,9 @@ class Importer implements ImporterInterface
             $fkCountry = $this->countryManager->getIdCountryByIso2Code($regionInstaller->getCountryIso());
 
             foreach ($regionInstaller->getCodeArray() as $isoCode => $regionName) {
-
                 if (!$this->regionManager->hasRegion($isoCode)) {
                     $this->regionManager->createRegion($isoCode, $fkCountry, $regionName);
                 }
-                
             }
         }
     }
