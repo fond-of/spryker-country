@@ -2,31 +2,38 @@
 
 namespace FondOfSpryker\Zed\Country\Persistence;
 
+use Orm\Zed\Country\Persistence\SpyCountryQuery;
 use Spryker\Zed\Country\Persistence\CountryQueryContainer as SprykerCountryQueryContainer;
 
 /**
  * @method \Spryker\Zed\Country\Persistence\CountryPersistenceFactory getFactory()
  */
-class CountryQueryContainer extends SprykerCountryQueryContainer
+class CountryQueryContainer extends SprykerCountryQueryContainer implements CountryQueryContainerInterface
 {
-    const COL_NAME = 'region_name';
+    public const COL_NAME = 'region_name';
 
-    public function queryCountryByIso2Code($iso2Code)
+    /**
+     * @param string $iso2Code
+     *
+     * @return \Orm\Zed\Country\Persistence\SpyCountryQuery
+     */
+    public function queryCountryByIso2Code($iso2Code): SpyCountryQuery
     {
-        $query = $this->queryCountries();
-        $query
-            ->leftJoinSpyRegion()
-            ->filterByIso2Code($iso2Code);
+        $query = parent::queryCountryByIso2Code($iso2Code);
+
+        $query->leftJoinSpyRegion();
 
         return $query;
     }
 
     /**
-     * @param $idCountry
+     * @param int $idCountry
+     *
+     * @throws
      *
      * @return \Orm\Zed\Country\Persistence\SpyCountryQuery
      */
-    public function queryCountryByIdCountry($idCountry)
+    public function queryCountryByIdCountry(int $idCountry): SpyCountryQuery
     {
         $query = $this->queryCountries();
         $query

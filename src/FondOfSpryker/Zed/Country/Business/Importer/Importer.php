@@ -14,18 +14,16 @@ class Importer implements ImporterInterface
     protected $config;
 
     /**
-     * @var \Spryker\Zed\Country\Business\CountryManagerInterface $countryManager
+     * @var \FondOfSpryker\Zed\Country\Business\CountryManagerInterface $countryManager
      */
     protected $countryManager;
 
     /**
-     * @var \Spryker\Zed\Country\Business\RegionManagerInterface $regionManager
+     * @var \FondOfSpryker\Zed\Country\Business\RegionManagerInterface $regionManager
      */
     protected $regionManager;
 
     /**
-     * Importer constructor.
-     *
      * @param \Spryker\Zed\Country\Business\CountryManagerInterface $countryManager
      * @param \Spryker\Zed\Country\Business\RegionManagerInterface $regionManager
      * @param \FondOfSpryker\Zed\Country\CountryConfig $config
@@ -41,9 +39,11 @@ class Importer implements ImporterInterface
     }
 
     /**
+     * @throws
+     *
      * @return void
      */
-    public function importRegions()
+    public function importRegions(): void
     {
         foreach ($this->config->getRegionInstallerCollection() as $regionInstaller) {
             $fkCountry = $this->countryManager->getIdCountryByIso2Code($regionInstaller->getCountryIso());

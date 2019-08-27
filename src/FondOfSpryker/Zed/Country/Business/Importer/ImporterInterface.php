@@ -7,5 +7,5 @@ interface ImporterInterface
     /**
      * @return void
      */
-    public function importRegions();
+    public function importRegions(): void;
 }

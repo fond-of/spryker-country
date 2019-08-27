@@ -3,10 +3,23 @@
 namespace FondOfSpryker\Client\Country\Zed;
 
 use Generated\Shared\Transfer\CountryTransfer;
-use Spryker\Client\ZedRequest\Stub\ZedRequestStub;
+use Spryker\Client\ZedRequest\ZedRequestClientInterface;
 
-class CountryStub extends ZedRequestStub implements CountryStubInterface
+class CountryStub implements CountryStubInterface
 {
+    /**
+     * @var \Spryker\Client\ZedRequest\ZedRequestClientInterface
+     */
+    protected $zedRequestClient;
+
+    /**
+     * @param \Spryker\Client\ZedRequest\ZedRequestClientInterface $zedRequestClient
+     */
+    public function __construct(ZedRequestClientInterface $zedRequestClient)
+    {
+        $this->zedRequestClient = $zedRequestClient;
+    }
+
     /**
      * @param \Generated\Shared\Transfer\CountryTransfer $countryTransfer
      *
@@ -14,6 +27,9 @@ class CountryStub extends ZedRequestStub implements CountryStubInterface
      */
     public function findRegionsByIsoCodeAction(CountryTransfer $countryTransfer): CountryTransfer
     {
-        return $this->zedStub->call('/country/gateway/find-regions-by-iso-code', $countryTransfer);
+        /** @var \Generated\Shared\Transfer\CountryTransfer $countryTransfer */
+        $countryTransfer = $this->zedRequestClient->call('/country/gateway/find-regions-by-iso-code', $countryTransfer);
+
+        return $countryTransfer;
     }
 }

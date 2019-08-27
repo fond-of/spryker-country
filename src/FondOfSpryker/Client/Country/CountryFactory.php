@@ -18,6 +18,8 @@ class CountryFactory extends AbstractFactory
     }
 
     /**
+     * @throws
+     *
      * @return \Spryker\Client\ZedRequest\ZedRequestClientInterface
      */
     protected function getZedRequestClient(): ZedRequestClientInterface

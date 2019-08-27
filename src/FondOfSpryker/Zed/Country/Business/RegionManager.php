@@ -2,15 +2,29 @@
 
 namespace FondOfSpryker\Zed\Country\Business;
 
-use MissingRegionException;
+use FondOfSpryker\Zed\Country\Business\Exception\MissingRegionException;
+use FondOfSpryker\Zed\Country\Persistence\CountryQueryContainerInterface;
 use Spryker\Zed\Country\Business\RegionManager as SprykerRegionManager;
 
 class RegionManager extends SprykerRegionManager implements RegionManagerInterface
 {
     /**
+     * @var \FondOfSpryker\Zed\Country\Persistence\CountryQueryContainerInterface
+     */
+    protected $countryQueryContainer;
+
+    /**
+     * @param \FondOfSpryker\Zed\Country\Persistence\CountryQueryContainerInterface $countryQueryContainer
+     */
+    public function __construct(CountryQueryContainerInterface $countryQueryContainer)
+    {
+        parent::__construct($countryQueryContainer);
+    }
+
+    /**
      * @param string $iso2code
      *
-     * @throws \MissingRegionException
+     * @throws \FondOfSpryker\Zed\Country\Business\Exception\MissingRegionException
      *
      * @return int
      */
@@ -20,7 +34,7 @@ class RegionManager extends SprykerRegionManager implements RegionManagerInterfa
         $region = $query->findOne();
 
         if (!$region) {
-            throw new MissingRegionException();
+            throw new MissingRegionException(sprintf('There is no region for "%s".', $iso2code));
         }
 
         return $region->getIdRegion();
