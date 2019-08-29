@@ -3,6 +3,7 @@
 namespace FondOfSpryker\Zed\Country\Business;
 
 use FondOfSpryker\Zed\Country\Business\Importer\Importer;
+use FondOfSpryker\Zed\Country\Business\Importer\ImporterInterface;
 use Spryker\Zed\Country\Business\CountryBusinessFactory as SprykerCountryBusinessFactory;
 use Spryker\Zed\Country\Business\CountryManagerInterface;
 use Spryker\Zed\Country\Business\RegionManagerInterface;
@@ -15,9 +16,9 @@ use Spryker\Zed\Country\Business\RegionManagerInterface;
 class CountryBusinessFactory extends SprykerCountryBusinessFactory
 {
     /**
-     * @return \FondOfSpryker\Zed\Country\Business\Importer\Importer
+     * @return \FondOfSpryker\Zed\Country\Business\Importer\ImporterInterface
      */
-    public function createImporter()
+    public function createImporter(): ImporterInterface
     {
         return new Importer(
             $this->createCountryManager(),
