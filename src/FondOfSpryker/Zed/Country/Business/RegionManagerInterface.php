@@ -2,9 +2,9 @@
 
 namespace FondOfSpryker\Zed\Country\Business;
 
-use Spryker\Zed\Country\Business\RegionManagerInterface as SprykerRegionManager;
+use Spryker\Zed\Country\Business\RegionManagerInterface as SprykerRegionManagerInterface;
 
-interface RegionManagerInterface extends SprykerRegionManager
+interface RegionManagerInterface extends SprykerRegionManagerInterface
 {
     /**
      * @param string $iso2code

@@ -39,4 +39,14 @@ class RegionManager extends SprykerRegionManager implements RegionManagerInterfa
 
         return $region->getIdRegion();
     }
+
+    /**
+     * @param string $isoCode
+     *
+     * @return bool
+     */
+    public function hasRegion($isoCode): bool
+    {
+        return parent::hasRegion($isoCode);
+    }
 }
