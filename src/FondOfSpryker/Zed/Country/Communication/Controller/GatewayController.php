@@ -19,4 +19,14 @@ class GatewayController extends AbstractGatewayController
     {
         return $this->getFacade()->getCountryByIso2Code($countryTransfer->getIso2Code());
     }
+
+    /**
+     * @param \Generated\Shared\Transfer\CountryTransfer $countryTransfer
+     *
+     * @return \Generated\Shared\Transfer\CountryTransfer
+     */
+    public function findCountryByIso2CodeAction(CountryTransfer $countryTransfer): CountryTransfer
+    {
+        return $this->getFacade()->getCountryByIso2Code($countryTransfer->getIso2Code());
+    }
 }

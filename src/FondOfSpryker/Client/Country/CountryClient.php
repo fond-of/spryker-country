@@ -19,4 +19,14 @@ class CountryClient extends AbstractClient implements CountryClientInterface
     {
         return $this->getFactory()->createCountryStub()->findRegionsByIsoCodeAction($countryTransfer);
     }
+
+    /**
+     * @param \Generated\Shared\Transfer\CountryTransfer $countryTransfer
+     *
+     * @return \Generated\Shared\Transfer\CountryTransfer
+     */
+    public function findCountryByIso2Code(CountryTransfer $countryTransfer): CountryTransfer
+    {
+        return $this->getFactory()->createCountryStub()->findCountryByIso2Code($countryTransfer);
+    }
 }

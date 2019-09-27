@@ -32,4 +32,17 @@ class CountryStub implements CountryStubInterface
 
         return $countryTransfer;
     }
+
+    /**
+     * @param \Generated\Shared\Transfer\CountryTransfer $countryTransfer
+     *
+     * @return \Generated\Shared\Transfer\CountryTransfer
+     */
+    public function findCountryByIso2Code(CountryTransfer $countryTransfer): CountryTransfer
+    {
+        /** @var \Generated\Shared\Transfer\CountryTransfer $countryTransfer */
+        $countryTransfer = $this->zedRequestClient->call('/country/gateway/find-country-by-iso2-code', $countryTransfer);
+
+        return $countryTransfer;
+    }
 }
