@@ -2,12 +2,22 @@
 
 namespace FondOfSpryker\Zed\Country\Business;
 
-interface CountryFacadeInterface
+use Generated\Shared\Transfer\CountryTransfer;
+use Spryker\Zed\Country\Business\CountryFacadeInterface as SprykerCountryFacadeInterface;
+
+interface CountryFacadeInterface extends SprykerCountryFacadeInterface
 {
     /**
      * @return void
      */
-    public function importRegions();
+    public function importRegions(): void;
+
+    /**
+     * @param int $idCountry
+     *
+     * @return \Generated\Shared\Transfer\CountryTransfer
+     */
+    public function getCountryByIdCountry(int $idCountry): CountryTransfer;
 
     /**
      * @param string $iso2code

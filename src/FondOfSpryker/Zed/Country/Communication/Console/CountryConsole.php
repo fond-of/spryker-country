@@ -1,4 +1,5 @@
 <?php
+
 namespace FondOfSpryker\Zed\Country\Communication\Console;
 
 use Spryker\Zed\Kernel\Communication\Console\Console;
@@ -7,6 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @method \FondOfSpryker\Zed\Country\Business\CountryFacadeInterface getFacade()
+ * @method \FondOfSpryker\Zed\Country\Persistence\CountryQueryContainerInterface getQueryContainer()
  */
 class CountryConsole extends Console
 {
@@ -16,7 +18,7 @@ class CountryConsole extends Console
     /**
      * @return void
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName(static::COMMAND_NAME);
         $this->setDescription(static::DESCRIPTION);
@@ -28,7 +30,7 @@ class CountryConsole extends Console
      *
      * @return int|null
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): ?int
     {
         $this->getFacade()->importRegions();
 

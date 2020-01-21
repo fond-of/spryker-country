@@ -2,7 +2,9 @@
 
 namespace FondOfSpryker\Zed\Country\Business;
 
-interface RegionManagerInterface
+use Spryker\Zed\Country\Business\RegionManagerInterface as SprykerRegionManagerInterface;
+
+interface RegionManagerInterface extends SprykerRegionManagerInterface
 {
     /**
      * @param string $iso2code
@@ -10,4 +12,11 @@ interface RegionManagerInterface
      * @return int
      */
     public function getIdRegionByIso2Code(string $iso2code): int;
+
+    /**
+     * @param string $isoCode
+     *
+     * @return bool
+     */
+    public function hasRegion($isoCode): bool;
 }

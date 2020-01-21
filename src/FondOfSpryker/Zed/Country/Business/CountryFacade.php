@@ -1,7 +1,7 @@
 <?php
+
 namespace FondOfSpryker\Zed\Country\Business;
 
-use Generated\Shared\Transfer\CountryCollectionTransfer;
 use Generated\Shared\Transfer\CountryTransfer;
 use Spryker\Zed\Country\Business\CountryFacade as SprykerCountryFacade;
 
@@ -11,43 +11,24 @@ use Spryker\Zed\Country\Business\CountryFacade as SprykerCountryFacade;
 class CountryFacade extends SprykerCountryFacade implements CountryFacadeInterface
 {
     /**
-     * @return void;
+     * @return void
      */
-    public function importRegions()
+    public function importRegions(): void
     {
         $this->getFactory()->createImporter()->importRegions();
     }
 
     /**
-     * @param string $iso2Code
+     * @param int $idCountry
      *
      * @return \Generated\Shared\Transfer\CountryTransfer
      */
-    public function getCountryByIso2Code($iso2Code): CountryTransfer
+    public function getCountryByIdCountry(int $idCountry): CountryTransfer
     {
-        return $this->getFactory()->createCountryManager()->getCountryByIso2Code($iso2Code);
-    }
+        /** @var \FondOfSpryker\Zed\Country\Business\CountryManagerInterface $countryManager */
+        $countryManager = $this->getFactory()->createCountryManager();
 
-    /**
-     * @param $idCountry
-     *
-     * @return mixed
-     */
-    public function getCountryByIdCountry($idCountry)
-    {
-        return $this->getFactory()->createCountryManager()->getCountryByIdCountry($idCountry);
-    }
-
-    /**
-     * @param \Generated\Shared\Transfer\CountryCollectionTransfer $countryCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\CountryCollectionTransfer
-     */
-    public function findCountriesByIso2Codes(CountryCollectionTransfer $countryCollectionTransfer): CountryCollectionTransfer
-    {
-        return $this->getFactory()
-            ->createCountryReader()
-            ->findCountriesByIso2Codes($countryCollectionTransfer);
+        return $countryManager->getCountryByIdCountry($idCountry);
     }
 
     /**
@@ -57,6 +38,9 @@ class CountryFacade extends SprykerCountryFacade implements CountryFacadeInterfa
      */
     public function getIdRegionByIso2Code(string $iso2code): int
     {
-        return $this->getFactory()->createRegionManager()->getIdRegionByIso2Code($iso2code);
+        /** @var \FondOfSpryker\Zed\Country\Business\RegionManagerInterface $regionManager */
+        $regionManager = $this->getFactory()->createRegionManager();
+
+        return $regionManager->getIdRegionByIso2Code($iso2code);
     }
 }
