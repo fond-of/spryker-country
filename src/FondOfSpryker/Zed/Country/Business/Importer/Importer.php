@@ -39,8 +39,6 @@ class Importer implements ImporterInterface
     }
 
     /**
-     * @throws
-     *
      * @return void
      */
     public function importRegions(): void
