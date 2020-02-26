@@ -3,7 +3,7 @@
 namespace FondOfSpryker\Client\Country\Zed;
 
 use Generated\Shared\Transfer\CountryTransfer;
-use Spryker\Client\ZedRequest\ZedRequestClientInterface;
+use Spryker\Client\Country\Dependency\Client\CountryToZedRequestClientInterface;
 
 class CountryStub implements CountryStubInterface
 {
@@ -13,9 +13,9 @@ class CountryStub implements CountryStubInterface
     protected $zedRequestClient;
 
     /**
-     * @param \Spryker\Client\ZedRequest\ZedRequestClientInterface $zedRequestClient
+     * @param \Spryker\Client\Country\Dependency\Client\CountryToZedRequestClientInterface $zedRequestClient
      */
-    public function __construct(ZedRequestClientInterface $zedRequestClient)
+    public function __construct(CountryToZedRequestClientInterface $zedRequestClient)
     {
         $this->zedRequestClient = $zedRequestClient;
     }
