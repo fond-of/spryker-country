@@ -3,9 +3,10 @@
 namespace FondOfSpryker\Client\Country;
 
 use Codeception\Test\Unit;
-use FondOfSpryker\Client\Country\Zed\CountryStubInterface;
+use FondOfSpryker\Client\Country\Zed\CountryStub;
+use Spryker\Client\Country\CountryDependencyProvider;
+use Spryker\Client\Country\Dependency\Client\CountryToZedRequestClientInterface;
 use Spryker\Client\Kernel\Container;
-use Spryker\Client\ZedRequest\ZedRequestClientInterface;
 
 class CountryFactoryTest extends Unit
 {
@@ -20,7 +21,7 @@ class CountryFactoryTest extends Unit
     protected $containerMock;
 
     /**
-     * @var \PHPUnit\Framework\MockObject\MockObject|\Spryker\Client\ZedRequest\ZedRequestClientInterface
+     * @var \PHPUnit\Framework\MockObject\MockObject|\Spryker\Client\Country\Dependency\Client\CountryToZedRequestClientInterface
      */
     protected $zedRequestClientInterfaceMock;
 
@@ -33,7 +34,7 @@ class CountryFactoryTest extends Unit
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->zedRequestClientInterfaceMock = $this->getMockBuilder(ZedRequestClientInterface::class)
+        $this->zedRequestClientInterfaceMock = $this->getMockBuilder(CountryToZedRequestClientInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -56,7 +57,7 @@ class CountryFactoryTest extends Unit
             ->willReturn($this->zedRequestClientInterfaceMock);
 
         $this->assertInstanceOf(
-            CountryStubInterface::class,
+            CountryStub::class,
             $this->countryFactory->createCountryStub()
         );
     }

@@ -4,8 +4,9 @@ namespace FondOfSpryker\Client\Country\Zed;
 
 use Generated\Shared\Transfer\CountryTransfer;
 use Spryker\Client\Country\Dependency\Client\CountryToZedRequestClientInterface;
+use Spryker\Client\Country\Zed\CountryStub as BaseCountryStub;
 
-class CountryStub implements CountryStubInterface
+class CountryStub extends BaseCountryStub implements CountryStubInterface
 {
     /**
      * @var \Spryker\Client\ZedRequest\ZedRequestClientInterface
