@@ -27,10 +27,9 @@ class CountryQueryContainer extends SprykerCountryQueryContainer implements Coun
     }
 
     /**
-     * @param  int  $idCountry
+     * @param int $idCountry
+     *
      * @return \Orm\Zed\Country\Persistence\SpyCountryQuery
-     * 
-     * @throws \Spryker\Zed\Propel\Business\Exception\AmbiguousComparisonException
      */
     public function queryCountryByIdCountry(int $idCountry): SpyCountryQuery
     {

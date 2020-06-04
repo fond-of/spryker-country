@@ -8,7 +8,6 @@ use Spryker\Yves\Kernel\AbstractPlugin;
 use Twig\Environment;
 
 /**
- * Class CountriesInEuTwigPlugin
  * @method \FondOfSpryker\Yves\Country\CountryConfig getConfig()
  */
 class CountriesInEuTwigPlugin extends AbstractPlugin implements TwigPluginInterface

@@ -7,6 +7,9 @@ use Spryker\Yves\Kernel\AbstractBundleConfig;
 
 class CountryConfig extends AbstractBundleConfig
 {
+    /**
+     * @return array
+     */
     public function getCountriesInEu(): array
     {
         return $this->get(CountryConstants::COUNTRIES_IN_EU, [
