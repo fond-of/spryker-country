@@ -26,7 +26,6 @@ class CountryManager extends SprykerCountryManager implements CountryManagerInte
     /**
      * @param string $iso2code
      *
-     * @throws
      * @throws \Spryker\Zed\Country\Business\Exception\MissingCountryException
      *
      * @return \Generated\Shared\Transfer\CountryTransfer
@@ -52,7 +51,6 @@ class CountryManager extends SprykerCountryManager implements CountryManagerInte
     /**
      * @param int $idCountry
      *
-     * @throws
      * @throws \Spryker\Zed\Country\Business\Exception\MissingCountryException
      *
      * @return \Generated\Shared\Transfer\CountryTransfer
