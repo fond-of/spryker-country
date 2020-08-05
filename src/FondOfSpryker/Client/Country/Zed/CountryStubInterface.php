@@ -3,8 +3,9 @@
 namespace FondOfSpryker\Client\Country\Zed;
 
 use Generated\Shared\Transfer\CountryTransfer;
+use Spryker\Client\Country\Zed\CountryStubInterface as BaseCountryStubInterface;
 
-interface CountryStubInterface
+interface CountryStubInterface extends BaseCountryStubInterface
 {
     /**
      * @param \Generated\Shared\Transfer\CountryTransfer $countryTransfer

@@ -18,7 +18,7 @@ composer require fond-of-spryker/country
 
 ```
  new CountryConsole(),
-     
+
 ```
 
 ## 2. Add Region Installers in Pyz\Zed\Country\CountryConfig
@@ -28,6 +28,27 @@ composer require fond-of-spryker/country
              new GermanyRegionInstaller(),
              new UnitedStatesRegionInstaller(),
          ];
-     
+
 ```
 
+## Optional
+
+If needed countries in EU in template register CountriesInEuTwigPlug in TwigDependencyProvider
+```
+protected function getTwigPlugins(): array
+    {
+        return [
+            ...
+            new CountriesInEuTwigPlugin(),
+        ];
+    }
+```
+Use in template
+```
+<script type="text/javascript">
+    var countriesInEU = {{ countries_in_eu | json_encode | raw }};
+</script>
+```
+
+## Changelog
+20200311 - moved the stuff from the old deprecated ShopApplicationServiceProvider addGlobalTemplateVariables to the twig CountriesInEuTwigPlugin

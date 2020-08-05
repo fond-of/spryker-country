@@ -24,8 +24,8 @@ class Importer implements ImporterInterface
     protected $regionManager;
 
     /**
-     * @param \Spryker\Zed\Country\Business\CountryManagerInterface $countryManager
-     * @param \Spryker\Zed\Country\Business\RegionManagerInterface $regionManager
+     * @param \FondOfSpryker\Zed\Country\Business\CountryManagerInterface $countryManager
+     * @param \FondOfSpryker\Zed\Country\Business\RegionManagerInterface $regionManager
      * @param \FondOfSpryker\Zed\Country\CountryConfig $config
      */
     public function __construct(
@@ -39,8 +39,6 @@ class Importer implements ImporterInterface
     }
 
     /**
-     * @throws
-     *
      * @return void
      */
     public function importRegions(): void
