@@ -10,7 +10,7 @@ interface CountryQueryContainerInterface extends SprykerCountryQueryContainerInt
     /**
      * @param int $idCountry
      *
-     * @throws
+     * @throws \Spryker\Zed\Propel\Business\Exception\AmbiguousComparisonException
      *
      * @return \Orm\Zed\Country\Persistence\SpyCountryQuery
      */

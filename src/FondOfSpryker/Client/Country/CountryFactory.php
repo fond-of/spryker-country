@@ -4,10 +4,9 @@ namespace FondOfSpryker\Client\Country;
 
 use FondOfSpryker\Client\Country\Zed\CountryStub;
 use FondOfSpryker\Client\Country\Zed\CountryStubInterface;
-use Spryker\Client\Kernel\AbstractFactory;
-use Spryker\Client\ZedRequest\ZedRequestClientInterface;
+use Spryker\Client\Country\CountryFactory as SprykerCountryFactory;
 
-class CountryFactory extends AbstractFactory
+class CountryFactory extends SprykerCountryFactory
 {
     /**
      * @return \FondOfSpryker\Client\Country\Zed\CountryStubInterface
@@ -15,15 +14,5 @@ class CountryFactory extends AbstractFactory
     public function createCountryStub(): CountryStubInterface
     {
         return new CountryStub($this->getZedRequestClient());
-    }
-
-    /**
-     * @throws
-     *
-     * @return \Spryker\Client\ZedRequest\ZedRequestClientInterface
-     */
-    protected function getZedRequestClient(): ZedRequestClientInterface
-    {
-        return $this->getProvidedDependency(CountryDependencyProvider::CLIENT_ZED_REQUEST);
     }
 }

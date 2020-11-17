@@ -4,7 +4,7 @@ namespace FondOfSpryker\Client\Country\Zed;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\CountryTransfer;
-use Spryker\Client\ZedRequest\ZedRequestClientInterface;
+use Spryker\Client\Country\Dependency\Client\CountryToZedRequestClientInterface;
 
 class CountryStubTest extends Unit
 {
@@ -14,7 +14,7 @@ class CountryStubTest extends Unit
     protected $countryStub;
 
     /**
-     * @var \PHPUnit\Framework\MockObject\MockObject|\Spryker\Client\ZedRequest\ZedRequestClientInterface
+     * @var \PHPUnit\Framework\MockObject\MockObject|\Spryker\Client\Country\Dependency\Client\CountryToZedRequestClientInterface
      */
     protected $zedRequestClientInterfaceMock;
 
@@ -38,7 +38,7 @@ class CountryStubTest extends Unit
      */
     protected function _before(): void
     {
-        $this->zedRequestClientInterfaceMock = $this->getMockBuilder(ZedRequestClientInterface::class)
+        $this->zedRequestClientInterfaceMock = $this->getMockBuilder(CountryToZedRequestClientInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
 

@@ -29,8 +29,6 @@ class CountryQueryContainer extends SprykerCountryQueryContainer implements Coun
     /**
      * @param int $idCountry
      *
-     * @throws
-     *
      * @return \Orm\Zed\Country\Persistence\SpyCountryQuery
      */
     public function queryCountryByIdCountry(int $idCountry): SpyCountryQuery

@@ -3,12 +3,12 @@
 namespace FondOfSpryker\Zed\Country\Communication\Controller;
 
 use Generated\Shared\Transfer\CountryTransfer;
-use Spryker\Zed\Kernel\Communication\Controller\AbstractGatewayController;
+use Spryker\Zed\Country\Communication\Controller\GatewayController as SprykerGatewayController;
 
 /**
  * @method \FondOfSpryker\Zed\Country\Business\CountryFacade getFacade()
  */
-class GatewayController extends AbstractGatewayController
+class GatewayController extends SprykerGatewayController
 {
     /**
      * @param \Generated\Shared\Transfer\CountryTransfer $countryTransfer
