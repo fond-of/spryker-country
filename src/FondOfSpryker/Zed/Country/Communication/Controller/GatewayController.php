@@ -6,7 +6,10 @@ use Generated\Shared\Transfer\CountryTransfer;
 use Spryker\Zed\Country\Communication\Controller\GatewayController as SprykerGatewayController;
 
 /**
- * @method \FondOfSpryker\Zed\Country\Business\CountryFacade getFacade()
+ * @method \FondOfSpryker\Zed\Country\Business\CountryFacadeInterface getFacade()
+ * @method \FondOfSpryker\Zed\Country\Persistence\CountryQueryContainerInterface getQueryContainer()
+ * @method \Spryker\Zed\Country\Persistence\CountryRepositoryInterface getRepository()
+ * @method \Spryker\Zed\Country\Communication\CountryCommunicationFactory getFactory()
  */
 class GatewayController extends SprykerGatewayController
 {

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<ruleset name="FondOfSpryker">
+    <rule ref="vendor/spryker/code-sniffer/Spryker/ruleset.xml"/>
+
+    <rule ref="Spryker.MethodAnnotation.ConfigMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="FondOfSpryker,Pyz,SprykerEco,Spryker" />
+        </properties>
+    </rule>
+
+    <rule ref="Spryker.MethodAnnotation.EntityManagerMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="FondOfSpryker,Pyz,SprykerEco,Spryker" />
+        </properties>
+    </rule>
+
+    <rule ref="Spryker.MethodAnnotation.FacadeMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="FondOfSpryker,Pyz,SprykerEco,Spryker" />
+        </properties>
+    </rule>
+
+    <rule ref="Spryker.MethodAnnotation.FactoryMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="FondOfSpryker,Pyz,SprykerEco,Spryker" />
+        </properties>
+    </rule>
+
+    <rule ref="Spryker.MethodAnnotation.QueryContainerMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="FondOfSpryker,Pyz,SprykerEco,Spryker" />
+        </properties>
+    </rule>
+
+    <rule ref="Spryker.MethodAnnotation.RepositoryMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="FondOfSpryker,Pyz,SprykerEco,Spryker" />
+        </properties>
+    </rule>
+</ruleset>

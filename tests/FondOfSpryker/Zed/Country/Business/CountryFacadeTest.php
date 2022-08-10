@@ -117,8 +117,8 @@ class CountryFacadeTest extends Unit
         $this->assertInstanceOf(
             CountryTransfer::class,
             $this->countryFacade->getCountryByIdCountry(
-                $this->idCountry
-            )
+                $this->idCountry,
+            ),
         );
     }
 
@@ -139,8 +139,8 @@ class CountryFacadeTest extends Unit
         $this->assertSame(
             $this->idRegion,
             $this->countryFacade->getIdRegionByIso2Code(
-                $this->iso2Code
-            )
+                $this->iso2Code,
+            ),
         );
     }
 }

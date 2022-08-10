@@ -31,7 +31,7 @@ class ImporterTest extends Unit
     protected $countryConfigMock;
 
     /**
-     * @var \Spryker\Zed\Country\Business\Internal\Regions\RegionInstallInterface[]
+     * @var array<\Spryker\Zed\Country\Business\Internal\Regions\RegionInstallInterface>
      */
     protected $regionInstallerCollection;
 
@@ -98,7 +98,7 @@ class ImporterTest extends Unit
         $this->importer = new Importer(
             $this->countryManagerInterfaceMock,
             $this->regionManagerInterfaceMock,
-            $this->countryConfigMock
+            $this->countryConfigMock,
         );
     }
 

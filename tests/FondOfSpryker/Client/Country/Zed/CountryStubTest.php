@@ -66,8 +66,8 @@ class CountryStubTest extends Unit
         $this->assertInstanceOf(
             CountryTransfer::class,
             $this->countryStub->findRegionsByIsoCodeAction(
-                $this->countryTransferMock
-            )
+                $this->countryTransferMock,
+            ),
         );
     }
 
@@ -84,8 +84,8 @@ class CountryStubTest extends Unit
         $this->assertInstanceOf(
             CountryTransfer::class,
             $this->countryStub->findCountryByIso2Code(
-                $this->countryTransferMock
-            )
+                $this->countryTransferMock,
+            ),
         );
     }
 }
