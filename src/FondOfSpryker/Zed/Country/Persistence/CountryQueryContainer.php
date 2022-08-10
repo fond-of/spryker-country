@@ -10,6 +10,9 @@ use Spryker\Zed\Country\Persistence\CountryQueryContainer as SprykerCountryQuery
  */
 class CountryQueryContainer extends SprykerCountryQueryContainer implements CountryQueryContainerInterface
 {
+    /**
+     * @var string
+     */
     public const COL_NAME = 'region_name';
 
     /**

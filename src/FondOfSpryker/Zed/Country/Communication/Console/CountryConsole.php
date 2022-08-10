@@ -9,11 +9,20 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * @method \FondOfSpryker\Zed\Country\Business\CountryFacadeInterface getFacade()
  * @method \FondOfSpryker\Zed\Country\Persistence\CountryQueryContainerInterface getQueryContainer()
+ * @method \Spryker\Zed\Country\Persistence\CountryRepositoryInterface getRepository()
+ * @method \Spryker\Zed\Country\Communication\CountryCommunicationFactory getFactory()
  */
 class CountryConsole extends Console
 {
-    private const COMMAND_NAME = 'country:region:import';
-    private const DESCRIPTION = 'Imports the Regions for the Countries';
+    /**
+     * @var string
+     */
+    public const COMMAND_NAME = 'country:region:import';
+
+    /**
+     * @var string
+     */
+    public const DESCRIPTION = 'Imports the Regions for the Countries';
 
     /**
      * @return void

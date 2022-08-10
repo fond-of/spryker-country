@@ -4,7 +4,6 @@ namespace FondOfSpryker\Zed\Country\Business;
 
 use Codeception\Test\Unit;
 use FondOfSpryker\Zed\Country\Business\Importer\Importer;
-use FondOfSpryker\Zed\Country\Business\Importer\ImporterInterface;
 use FondOfSpryker\Zed\Country\CountryConfig;
 use FondOfSpryker\Zed\Country\Persistence\CountryQueryContainer;
 
@@ -50,7 +49,7 @@ class CountryBusinessFactoryTest extends Unit
     {
         $this->assertInstanceOf(
             Importer::class,
-            $this->countryBusinessFactory->createImporter()
+            $this->countryBusinessFactory->createImporter(),
         );
     }
 }

@@ -23,7 +23,7 @@ class CountryBusinessFactory extends SprykerCountryBusinessFactory
         return new Importer(
             $this->createCountryManager(),
             $this->createRegionManager(),
-            $this->getConfig()
+            $this->getConfig(),
         );
     }
 
@@ -33,7 +33,7 @@ class CountryBusinessFactory extends SprykerCountryBusinessFactory
     public function createCountryManager(): CountryManagerInterface
     {
         return new CountryManager(
-            $this->getQueryContainer()
+            $this->getQueryContainer(),
         );
     }
 
@@ -43,7 +43,7 @@ class CountryBusinessFactory extends SprykerCountryBusinessFactory
     public function createRegionManager(): RegionManagerInterface
     {
         return new RegionManager(
-            $this->getQueryContainer()
+            $this->getQueryContainer(),
         );
     }
 }

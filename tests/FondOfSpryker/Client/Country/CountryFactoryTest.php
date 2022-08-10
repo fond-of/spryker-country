@@ -58,7 +58,7 @@ class CountryFactoryTest extends Unit
 
         $this->assertInstanceOf(
             CountryStub::class,
-            $this->countryFactory->createCountryStub()
+            $this->countryFactory->createCountryStub(),
         );
     }
 }

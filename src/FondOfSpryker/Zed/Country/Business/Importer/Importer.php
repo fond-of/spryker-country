@@ -9,17 +9,17 @@ use Spryker\Zed\Country\Business\RegionManagerInterface;
 class Importer implements ImporterInterface
 {
     /**
-     * @var \FondOfSpryker\Zed\Country\CountryConfig $config
+     * @var \FondOfSpryker\Zed\Country\CountryConfig
      */
     protected $config;
 
     /**
-     * @var \FondOfSpryker\Zed\Country\Business\CountryManagerInterface $countryManager
+     * @var \FondOfSpryker\Zed\Country\Business\CountryManagerInterface
      */
     protected $countryManager;
 
     /**
-     * @var \FondOfSpryker\Zed\Country\Business\RegionManagerInterface $regionManager
+     * @var \FondOfSpryker\Zed\Country\Business\RegionManagerInterface
      */
     protected $regionManager;
 

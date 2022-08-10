@@ -66,8 +66,8 @@ class CountryClientTest extends Unit
         $this->assertInstanceOf(
             CountryTransfer::class,
             $this->countryClient->getRegionsByCountryTransfer(
-                $this->countryTransferMock
-            )
+                $this->countryTransferMock,
+            ),
         );
     }
 
@@ -88,8 +88,8 @@ class CountryClientTest extends Unit
         $this->assertInstanceOf(
             CountryTransfer::class,
             $this->countryClient->findCountryByIso2Code(
-                $this->countryTransferMock
-            )
+                $this->countryTransferMock,
+            ),
         );
     }
 }

@@ -7,6 +7,7 @@ use Spryker\Zed\Country\Business\CountryFacade as SprykerCountryFacade;
 
 /**
  * @method \FondOfSpryker\Zed\Country\Business\CountryBusinessFactory getFactory()
+ * @method \Spryker\Zed\Country\Persistence\CountryRepositoryInterface getRepository()
  */
 class CountryFacade extends SprykerCountryFacade implements CountryFacadeInterface
 {
